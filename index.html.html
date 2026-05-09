@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Sistema ❤️</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .box{
+      width: 100%;
+      max-width: 700px;
+      background: rgba(31,31,31,0.95);
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255,77,109,0.35);
+      animation: fade 0.8s ease;
+    }
+
+    h1,h2,h3{
+      margin-bottom: 18px;
+    }
+
+    p{
+      color: #d9d9d9;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
+    img{
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    button{
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    button:hover{
+      background: #ff1e4d;
+      transform: scale(1.05);
+    }
+
+    .loading{
+      font-size: 22px;
+      margin: 20px 0;
+      color: #ff8fa3;
+    }
+
+    .barra{
+      width: 100%;
+      height: 22px;
+      background: #333;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .progresso{
+      width: 100%;
+      height: 100%;
+      background: #ff4d6d;
+      animation: carregar 4s linear;
+    }
+
+    @keyframes carregar{
+      from{
+        width: 0%;
+      }
+
+      to{
+        width: 100%;
+      }
+    }
+
+    @keyframes fade{
+      from{
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MÚSICA -->
+  <audio id="musica" loop>
+    <source src="meutalismã.mp4" type="audio/mpeg">
+  </audio>
+
+  <div class="box" id="tela">
+
+    <h1>Sistema TecnoLógica v10.0 ❤️</h1>
+
+    <p>Inicializando sistema...</p>
+    <p>Carregando memórias...</p>
+    <p>Verificando conexão emocional...</p>
+
+    <button onclick="iniciar()">Iniciar</button>
+
+  </div>
+
+  <script>
+
+    function iniciar(){
+      document.getElementById("musica").play();
+      pergunta1();
+    }
+
+    function pergunta1(){
+      document.getElementById("tela").innerHTML = `
+
+        <img src="primeira.jpeg">
+
+        <h2>Pergunta 1 ❤️</h2>
+
+        <p>Em que ano começamos nossa história?</p>
+
+        <button onclick="certa1()">2016</button>
+
+        <button onmouseover="fugir(this)">
+          2018
+        </button>
+
+      `;
+    }
+
+    function certa1(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <h2>✔️ Resposta correta</h2>
+
+        <p>
+          Sistema identificou:
+          conexão rara e permanente ❤️
+        </p>
+
+        <button onclick="pergunta2()">
+          Continuar
+        </button>
+
+      `;
+    }
+
+    function pergunta2(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <img src="ultimamaratona.jpeg">
+
+        <h2>Pergunta 2 😄</h2>
+
+        <p>Qual nosso rolê favorito?</p>
+
+        <button onclick="certa2()">
+          Ir à maratona
+        </button>
+
+        <button onmouseover="fugir(this)">
+          Passar o dia todo juntinhas
+        </button>
+
+      `;
+    }
+
+    function certa2(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <h2>Analisando histórico...</h2>
+
+        <div class="barra">
+          <div class="progresso"></div>
+        </div>
+
+        <p class="loading">
+          Carregando 10 anos de memórias...
+        </p>
+
+      `;
+
+      setTimeout(memoria1, 4500);
+    }
+
+    function memoria1(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <img src="lapa.jpeg">
+
+        <h2>Memória encontrada 💖</h2>
+
+        <p>
+          Ainda lembro do começo de tudo.
+          Das primeiras conversas,
+          das risadas,
+          das noites juntas
+          e da forma como você entrou na minha vida.
+        </p>
+
+        <p>
+          Sem perceber,
+          você virou meu lugar favorito no mundo.
+        </p>
+
+        <button onclick="memoria2()">
+          Continuar
+        </button>
+
+      `;
+    }
+
+    function memoria2(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <img src="ultimamaratona.jpeg">
+
+        <h2>Mais lembranças carregadas ✨</h2>
+
+        <p>
+          Foram 10 anos crescendo juntas.
+          Passando por mudanças,
+          desafios,
+          sonhos,
+          e muitos,
+          muitos momentos felizes
+          e dias difíceis também.
+        </p>
+
+        <p>
+          E mesmo depois de todo esse tempo...
+          eu ainda escolho você.
+          Todos os dias ❤️
+        </p>
+
+        <button onclick="estatisticas()">
+          Ver estatísticas
+        </button>
+
+      `;
+    }
+
+    function estatisticas(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <h2>📊 Resultado da análise</h2>
+
+        <p>Compatibilidade: 100%</p>
+
+        <p>Amor detectado: infinito ♾️</p>
+
+        <p>Discussões vencidas por mim: 98% 😄</p>
+
+        <p>Quantidade de saudade:
+        absurda quando estamos longe</p>
+
+        <p>
+          Resultado final:
+          impossível imaginar a vida sem você 💖
+        </p>
+
+        <button onclick="pedidoFinal()">
+          Finalizar sistema
+        </button>
+
+      `;
+    }
+
+    function pedidoFinal(){
+
+      document.getElementById("tela").innerHTML = `
+
+        <img src="aliança.jpeg">
+
+        <h2>Resultado final ❤️</h2>
+
+        <p>
+          Depois de 10 anos...
+          depois de todas as fases,
+          mudanças,
+          sonhos
+          e momentos que vivemos...
+        </p>
+
+        <p>
+          ainda existe uma única certeza:
+        </p>
+
+        <h3>
+          eu quero continuar vivendo tudo isso com você.
+        </h3>
+
+        <h2>
+          💍 Você aceita casar comigo de novo?
+        </h2>
+
+        <button onclick="resposta()">
+          SIM ❤️
+        </button>
+
+        <button onmouseover="fugir(this)">
+          NÃO 😏
+        </button>
+
+      `;
+    }
+
+    function resposta(){
+
+  document.getElementById("tela").innerHTML = `
+
+    <h1>💖 Meu Talismã 💖</h1>
+
+    <p>
+      Te amo há 10 anos...
+    </p>
+
+    <p>
+      E escolheria você,
+      em todas as versões da nossa vida ❤️
+    </p>
+
+    <h2>
+      Para sempre nós.
+    </h2>
+
+    <p>
+      Obrigada por construir essa história comigo ✨
+    </p>
+
+    <button onclick="encerrar()">
+      Continuar nossa história ❤️
+    </button>
+
+  `;
+}
+
+function encerrar(){
+
+  document.getElementById("musica").pause();
+
+  document.getElementById("tela").innerHTML = `
+
+    <h1>❤️</h1>
+
+    <h2>
+      Nosso sistema continuará em execução...
+    </h2>
+
+    <p>
+      Porque você é o amor
+      da minha existência ✨
+    </p>
+
+  `;
+}
+
+    function fugir(botao){
+
+      let x =
+      Math.random() * (window.innerWidth - 150);
+
+      let y =
+      Math.random() * (window.innerHeight - 100);
+
+      botao.style.position = "absolute";
+      botao.style.left = x + "px";
+      botao.style.top = y + "px";
+
+    }
+
+  </script>
+
+</body>
+</html>
+
